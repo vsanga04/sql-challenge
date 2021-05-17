@@ -1,3 +1,11 @@
+DROP TABLE dept_emp;
+DROP TABLE dept_manager;
+DROP TABLE departments;
+DROP TABLE titles;
+DROP TABLE employees;
+DROP TABLE salaries;
+
+
 CREATE TABLE departments (
   	dept_no varchar primary key,
   	dept_name VARCHAR
@@ -36,6 +44,7 @@ CREATE TABLE dept_manager (
 );
 
 CREATE TABLE salaries (
+	constraint salaries_key primary key ("emp_no"),
 	emp_no int,
 	salaries int,
 	foreign key (emp_no) references employees(emp_no)
